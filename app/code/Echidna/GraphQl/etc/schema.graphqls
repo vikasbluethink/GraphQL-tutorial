@@ -1,3 +1,7 @@
+#extend product graphQl schema
+interface ProductInterface {
+    is_over_sized: Boolean @resolver(class: "Echidna\\GraphQl\\Model\\Resolver\\IsOversizedResolver") @doc(description: "Check if product is over sized.")
+}
 type Query {
     blog: Blog @resolver(class:"Echidna\\GraphQl\\Model\\Resolver\\BlogResolver") @doc(description: "Return a list of blogs.")
 }
